@@ -1,0 +1,50 @@
+
+.container {
+    position: absolute;
+    height: 100vh;
+    left: 0;
+    width: 17vw;
+    background: var(--darkBlue);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 30px 30px 20px;
+}
+
+.topContainer {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.title {
+    color: var(--white);
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.container button {
+    all: unset;
+    width: 100%;
+    text-align: start;
+    padding: 15px 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    color: var(--white);
+}
+
+.container button:hover {
+    background: var(--gray);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.loginButton {
+    background: var(--lightBlue) !important;
+    text-align: center !important;
+}

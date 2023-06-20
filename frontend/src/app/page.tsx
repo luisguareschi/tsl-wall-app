@@ -2,6 +2,7 @@
 import styles from './page.module.css'
 import server from "@/Functions/Server";
 import {useEffect, useState} from "react";
+import Sidebar from "@/components/Sidebar/Sidebar";
 
 const Home = () => {
     const [user, setUser] = useState<object>({})
@@ -12,23 +13,9 @@ const Home = () => {
     const getUserData = () => {
         server.get('/user/').then(r => {
             console.log(r.data.user)
-            // alert(JSON.stringify(r.data.user))
             setUser(r.data.user)
         }).catch(r => {
             console.log(r.response.data)
-            // alert(r.response.data.detail)
-        })
-    }
-
-    const handleLogout = () => {
-        server.get('/logout/',
-            {withCredentials: true}
-        ).then(r => {
-            console.log(r)
-            setUser({})
-        }).catch(r => {
-            console.log(r.response.data)
-            alert(r.response.data.detail)
         })
     }
 
@@ -36,7 +23,8 @@ const Home = () => {
         <div className={styles.container}>
             Hello world
             {JSON.stringify(user)}
-            <button onClick={handleLogout}>Logout</button>
+            <Sidebar userData={user}
+                     setUser={(value) => setUser(value)}/>
         </div>
     )
 }

@@ -56,7 +56,15 @@ def get_users(request):
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-@api_view(['DELETE'])
-def delete_user(request):
-    get_user_model().objects.filter(email=request.data['email']).delete()
-    return Response(f'User {request.data["email"]} deleted')
+# @api_view(['DELETE'])
+# def delete_user(request):
+#     get_user_model().objects.filter(email=request.data['email']).delete()
+#     return Response(f'User {request.data["email"]} deleted')
+#
+
+class DeleteUserView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    def post(self, request):
+        get_user_model().objects.filter(email=request.data['email']).delete()
+        return Response(f'User {request.data["email"]} deleted')
