@@ -1,0 +1,135 @@
+
+.outerContainer {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.26);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--white);
+    padding: 30px 30px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.44) 0px 0px 10px 0px;
+    gap: 20px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--darkBlue);
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    gap: 5px;
+}
+
+.inputContainer input, .inputContainer textarea {
+    font-size: 18px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 0px 10px 0px;
+    color: var(--darkGray);
+}
+
+.inputContainer textarea:focus, .inputContainer input:focus {
+    outline: none;
+}
+
+.inputContainer textarea {;
+    height: 20vh;
+    width: 30vw;
+    resize: none;
+}
+
+.inputContainer {
+    font-size: 18px;
+    color: var(--darkGray);
+    font-weight: bold;
+}
+
+.submitButton button {
+    all: unset;
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    color: var(--white);
+    background: var(--lightBlue);
+}
+
+.submitButton button:hover {
+    background: var(--darkBlue);
+    cursor: pointer;
+}
+
+.imagePreview {
+    width: 30vw;
+    height: auto;
+    object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 0px 10px 0px;
+    border-radius: 15px;
+    max-height: 200px;
+}
+
+.fileInput {
+    display: none !important;
+}
+
+.fileInputButton {
+    all: unset;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: var(--darkGray);
+    gap: 10px;
+}
+
+.fileInputButton div {
+    font-size: 18px;
+}
+
+.fileInputButton:hover {
+    cursor: pointer;
+}
+
+.imagePreviewContainer {
+    position: relative;
+}
+
+.deletePreview {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    font-size: 20px;
+    background: var(--gray);
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border-style: none;
+}
+
+.deletePreview:hover {
+    cursor: pointer;
+}
+

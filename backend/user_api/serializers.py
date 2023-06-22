@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model, authenticate
 
+from user_api.models import Post
+
 UserModel = get_user_model()
 
 
@@ -36,4 +38,29 @@ class UserLoginSerializer(serializers.Serializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserModel
-        fields = ('email', 'username')
+        fields = ('email', 'username', 'user_id')
+
+
+class UserPostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserModel
+        fields = ('username',)
+
+
+class PostSerializer(serializers.ModelSerializer):
+    user = serializers.CharField(source='user.username', read_only=True)  # Add this line
+
+    class Meta:
+        model = Post
+        fields = '__all__'
+
+    def get_image_url(self, obj):
+        if obj.image:
+            return self.context['request'].build_absolute_uri(obj.image.url)
+        return None
+
+
+class CreatePostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = '__all__'

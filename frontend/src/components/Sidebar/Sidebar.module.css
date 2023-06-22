@@ -1,9 +1,11 @@
 
 .container {
-    position: absolute;
+    position: fixed;
     height: 100vh;
+    top: 0;
     left: 0;
     width: 17vw;
+    min-width: var(--minWidthOfSideBar);
     background: var(--darkBlue);
     display: flex;
     justify-content: space-between;
@@ -33,18 +35,30 @@
     width: 100%;
     text-align: start;
     padding: 15px 10px;
-    font-size: 20px;
+    font-size: 25px;
     border-radius: 10px;
     color: var(--white);
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    transition: 0.1s ease-in-out;
 }
 
 .container button:hover {
-    background: var(--gray);
+    background: var(--darkBlueHover);
     color: var(--white);
     cursor: pointer;
+    scale: 1.05;
 }
 
 .loginButton {
     background: var(--lightBlue) !important;
     text-align: center !important;
+    justify-content: center !important;
+}
+
+.loginButton:hover {
+    scale: 1 !important;
 }

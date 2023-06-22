@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import AppUser
+from .models import AppUser, Post
 
 
 class AppUserAdmin(UserAdmin):
@@ -11,7 +11,7 @@ class AppUserAdmin(UserAdmin):
     ordering = ('email',)
     fieldsets = (
         (None, {'fields': ('email', 'username', 'password')}),
-        ('Permissions', {'fields': ('is_staff', 'is_superuser', 'is_active')}),
+        ('Permissions', {'fields': ('is_staff', 'is_superuser')}),
     )
     add_fieldsets = (
         (None, {
@@ -21,4 +21,12 @@ class AppUserAdmin(UserAdmin):
     )
 
 
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('title', 'content', 'user', 'created_at', 'user_likes', 'image')
+    list_filter = ('created_at', 'user_likes')
+    search_fields = ('title', 'content', 'user')
+    ordering = ('created_at',)
+
+
 admin.site.register(AppUser, AppUserAdmin)
+admin.site.register(Post, PostAdmin)

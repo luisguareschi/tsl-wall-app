@@ -39,3 +39,15 @@ class AppUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.username
+
+
+class Post(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    user = models.ForeignKey(AppUser, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    user_likes = models.TextField(default='[]')
+    image = models.ImageField(upload_to='images/', blank=True, null=True)
+
+    def __str__(self):
+        return self.title

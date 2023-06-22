@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 :root {
     --darkBlue: #212639;
+    --darkBlueHover: #1A1F2B;
     --white: #FAFBFC;
     --grayBlue: #93A6BF;
     --lightBlue: #4E78BB;
     --gray: #8B9094;
-    --fontFamily: "Roboto", sans-serif;
+    --fontFamily: "Comforta", sans-serif;
+    --darkGray: #4d4d53;
+    --minWidthOfSideBar: 200px;
 }
 
 body {
@@ -17,4 +21,5 @@ body {
 * {
     font-family: var(--fontFamily);
     box-sizing: border-box !important;
+    white-space: pre-wrap;
 }

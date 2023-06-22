@@ -57,7 +57,8 @@ const LoginPage = () => {
                     TSL Wall
                 </div>
                 <div className={styles.content}>
-                    <input value={email} onChange={(event)=>setEmail(event.target.value)} placeholder={'email'}/>
+                    <input value={email} onChange={(event)=>setEmail(event.target.value)}
+                           placeholder={'email'} autoComplete={'on'}/>
                     {createNewUser &&
                         <input value={username} onChange={(event)=>setUsername(event.target.value)} placeholder={'username'}/>}
                     <input value={password} onChange={(event)=>setPassword(event.target.value)} placeholder={'password'}/>

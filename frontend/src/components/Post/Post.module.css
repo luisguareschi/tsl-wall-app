@@ -1,0 +1,120 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background: var(--white);
+    width: 40vw;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08);
+    gap: 20px;
+}
+
+.upperRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+}
+
+.topLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2px;
+    height: 100%;
+}
+
+.profileIcon {
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    color: var(--white);
+    /*border: var(--darkBlue) solid 1px;*/
+}
+
+.username {
+    font-weight: bold;
+    color: var(--darkBlue);
+}
+
+.date {
+    color: var(--gray);
+}
+
+.title {
+    font-weight: bold;
+    color: var(--darkBlue);
+    font-size: 20px;
+}
+
+.image {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.13) 0px 0px 10px 0px;
+}
+
+.content {
+    color: var(--darkGray);
+}
+
+.likes {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+    color: var(--darkGray);
+    transition: .2s ease-in-out;
+}
+
+.likes:hover {
+    cursor: pointer;
+    scale: 1.05;
+}
+
+.heart {
+    color: var(--gray) !important;
+    font-size: 20px;
+}
+
+.heartLiked {
+    color: red;
+    font-size: 20px;
+}
+
+.bottomRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.bottomRow button {
+    border-style: none;
+    background: var(--gray);
+    color: var(--white);
+    padding: 8px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 10px 0px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.bottomRow button:hover {
+    cursor: pointer;
+}

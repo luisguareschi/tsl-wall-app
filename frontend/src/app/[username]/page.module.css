@@ -29,14 +29,23 @@
     }
 }
 
-.welcomeText {
+.title {
     font-size: 30px;
     font-weight: bold;
     color: var(--darkBlue);
 }
 
-.loadingText {
+.secondaryText {
     font-size: 30px;
-    font-weight: normal;
     color: var(--darkGray);
+}
+
+.postContainer {
+    position: relative;
+}
+
+.postContainer button {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
 }
