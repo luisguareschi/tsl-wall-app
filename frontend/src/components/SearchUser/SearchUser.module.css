@@ -1,0 +1,102 @@
+
+.outerContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    background: var(--white);
+    position: fixed;
+    top: 0;
+    left: max(17vw, var(--minWidthOfSideBar));
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 100vh;
+    padding: 20px 30px;
+    /*border-radius: 20px;*/
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 10px 0px;
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    color: var(--darkBlue);
+}
+
+.container input {
+    font-size: 20px;
+    background: white;
+    border-style: none;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 10px 0px;
+    padding: 15px;
+    color: var(--darkGray);
+    width: 22vw;
+}
+
+.usersContainer {
+    font-size: 20px;
+    color: var(--darkGray);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    gap: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-right: 20px;
+    height: 100%;
+}
+
+.usersContainer::-webkit-scrollbar {
+    width: 3px;
+    background-color: var(--white);
+    border-radius: 2px;
+}
+
+.usersContainer::-webkit-scrollbar-thumb {
+    background: var(--gray);
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 10px 0px;
+    transition: ease-in-out 0.1s;
+}
+
+.user:hover {
+    scale: 1.05;
+}
+
+.profileIcon {
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    color: var(--white);
+    font-size: 15px;
+    /*border: var(--darkBlue) solid 1px;*/
+}

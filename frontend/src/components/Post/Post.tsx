@@ -18,7 +18,7 @@ const Post = ({postData, userData, owner}:props) => {
     const username = postData.user
     const [userLikes, setUserLikes] = useState(JSON.parse(postData.user_likes))
     const initials = username.substring(0, 2).toUpperCase();
-    const color = stringToHslColor(initials, 50, 50)
+    const color = stringToHslColor(username, 50, 50)
     let loggedInUsername = 'username' in userData ? userData.username : ''
     const [userLiked, setUserLiked] = useState<boolean>(userLikes.includes(loggedInUsername))
 

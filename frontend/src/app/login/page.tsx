@@ -50,9 +50,19 @@ const LoginPage = () => {
         })
     }
 
+    const handleEnter = (event: any) => {
+        if (event.key === 'Enter') {
+            if (createNewUser) {
+                handleRegister()
+            } else {
+                handleLogin()
+            }
+        }
+    }
+
     return (
         <div className={styles.container}>
-            <div className={styles.cardContainer}>
+            <div className={styles.cardContainer} onKeyDown={handleEnter}>
                 <div className={styles.title}>
                     TSL Wall
                 </div>

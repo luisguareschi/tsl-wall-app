@@ -7,7 +7,6 @@ from .models import Post
 from .serializers import UserRegisterSerializer, UserLoginSerializer, UserSerializer, PostSerializer, \
     CreatePostSerializer
 from rest_framework import status, permissions
-from rest_framework.decorators import api_view
 
 
 # Create your views here.
@@ -115,10 +114,11 @@ class DeleteUserPost(APIView):
         return Response(status=status.HTTP_200_OK)
 
 
+class GetUsers(APIView):
+    permission_classes = [permissions.AllowAny]
 
-
-@api_view(['GET'])
-def get_users(request):
-    users = get_user_model().objects.all()
-    serializer = UserSerializer(users, many=True)
-    return Response(serializer.data, status=status.HTTP_200_OK)
+    def get(self, request):
+        users = get_user_model().objects.all()
+        users = users.order_by('username')
+        serializer = UserSerializer(users, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

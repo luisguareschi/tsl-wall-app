@@ -6,6 +6,7 @@ import Sidebar from "@/components/Sidebar/Sidebar";
 import Post from "@/components/Post/Post";
 import CreatePost from "@/components/CreatePost/CreatePost";
 import getUserData from "@/Functions/getUserData";
+import SearchUser from "@/components/SearchUser/SearchUser";
 
 type userData = { username: string, email: string, user_id:number } | {}
 
@@ -46,7 +47,8 @@ const Home = () => {
                         )
                     })}
                     <Sidebar userData={user}
-                             setUser={(value) => setUser(value)} setShowCreatePost={(value: boolean)=>setShowCreatePost(value)}/>
+                             setUser={(value) => setUser(value)}
+                             setShowCreatePost={(value: boolean)=>setShowCreatePost(value)}/>
                 </div>
             </div>
             <CreatePost show={showCreatePost} setShow={(value: boolean)=>setShowCreatePost(value)}/>
