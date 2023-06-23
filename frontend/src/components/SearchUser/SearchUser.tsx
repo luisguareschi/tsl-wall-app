@@ -31,7 +31,14 @@ const SearchUser = ({show, setShow}:props) => {
             setShow(false)
         }
     }
-    if (!show) return null
+    if (!show) {
+        document.body.style.overflow = 'unset'
+        return
+    }
+
+    if (show) {
+        document.body.style.overflow = 'hidden'
+    }
 
     return (
         <div className={styles.outerContainer} onClick={handleOutsideClick}>
