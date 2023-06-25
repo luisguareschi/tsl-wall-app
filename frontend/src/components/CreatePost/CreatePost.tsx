@@ -70,8 +70,8 @@ const CreatePost = ({show, setShow}:props) => {
 
     if (!show) return
     return (
-        <div className={styles.outerContainer} onClick={hide}>
-            <div className={styles.container} onClick={handleClickOnContainer}>
+        <div className={styles.outerContainer} onMouseDown={hide}>
+            <div className={styles.container} onMouseDown={handleClickOnContainer}>
                 <div className={styles.title}>Create Post</div>
                 <div className={styles.inputContainer}>
                     Title

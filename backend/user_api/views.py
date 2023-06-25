@@ -3,6 +3,7 @@ from rest_framework.authentication import SessionAuthentication
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
+from Functions.send_email import send_welcome_email
 from .models import Post
 from .serializers import UserRegisterSerializer, UserLoginSerializer, UserSerializer, PostSerializer, \
     CreatePostSerializer
@@ -19,6 +20,9 @@ class UserRegisterView(APIView):
         if serializer.is_valid(raise_exception=True):
             user = serializer.create(request.data)
             if user:
+                # Send email to user
+                user_email = request.data['email']
+                send_welcome_email(user_email)
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
