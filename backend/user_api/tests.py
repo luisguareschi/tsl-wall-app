@@ -22,7 +22,6 @@ class APITestCase(TestCase):
         url = reverse('login')
         data = {'email': 'test20@example.com', 'password': '1234'}
         response = self.client.post(url, data)
-        print(response)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_get_posts(self):
